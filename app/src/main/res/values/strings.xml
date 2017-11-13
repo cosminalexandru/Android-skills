@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Android-skills</string>
+    <string name="title_user_list">Users</string>
+    <string name="title_user_detail">User Detail</string>
+    <string name="gold_badges">Gold badges</string>
+    <string name="bronze_badges">Bronze badges</string>
+    <string name="silver_badges">Silver badges</string>
 </resources>

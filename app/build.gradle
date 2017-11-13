@@ -1,15 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+    compileSdkVersion app.compileSdk
+    buildToolsVersion app.buildTools
     defaultConfig {
-        applicationId "com.example.cosminalex.android_skills"
-        minSdkVersion 16
-        targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        applicationId app.id
+        minSdkVersion app.minSdk
+        targetSdkVersion app.targetSdk
+        versionCode app.versionCode
+        versionName app.versionName
     }
     buildTypes {
         release {
@@ -20,11 +19,21 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
+    implementation project(":commons")
+    implementation project(":api")
+    implementation libraries.appCompatV7
+    implementation libraries.constraintLayout
+    implementation libraries.retrofit
+    implementation libraries.okhttp
+    implementation libraries.okhttpLogger
+    implementation libraries.gson
+    implementation libraries.glide
+    implementation libraries.rxAndroid
+    implementation libraries.rxJava
+    implementation libraries.recyclerView
+    implementation libraries.retrofitGsonConverter
+    implementation libraries.retrofitRxAdapter
+    implementation 'com.android.support:support-v4:26.1.0'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    implementation 'com.android.support:design:26.1.0'
 }

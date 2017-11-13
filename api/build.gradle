@@ -1,0 +1,23 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion app.compileSdk
+    buildToolsVersion app.buildTools
+    defaultConfig {
+        minSdkVersion app.minSdk
+        targetSdkVersion app.targetSdk
+        versionCode app.versionCode
+        versionName app.versionName
+    }
+
+}
+
+dependencies {
+    implementation project(":commons")
+    implementation libraries.retrofit
+    implementation libraries.rxAndroid
+    implementation libraries.rxJava
+    implementation libraries.okhttp
+
+
+}
